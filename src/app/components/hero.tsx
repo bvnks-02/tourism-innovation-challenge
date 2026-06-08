@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Plane } from 'lucide-react';
+import heroBanner from '../../assets/Gemini_Generated_Image_b93p9tb93p9tb93p 1 1.svg';
 
 function TimeUnit({ value, label }: { value: string, label: string }) {
   return (
@@ -58,6 +59,21 @@ export function Hero({ onRegister }: { onRegister?: () => void }) {
       </div>
 
       <div className="container mx-auto px-6 max-w-6xl text-center relative z-10">
+        {/* Hero Banner Image */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mb-8"
+        >
+          <img
+            src={heroBanner}
+            alt="Exploria Hero Banner"
+            className="w-full max-w-4xl mx-auto h-auto object-contain"
+          />
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
