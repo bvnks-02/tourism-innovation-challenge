@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { Navbar } from '../app/components/navbar';
 import { Hero } from '../app/components/hero';
 import { Exploria } from '../app/components/exploria';
@@ -10,7 +10,8 @@ import { Prizes } from '../app/components/Prizes';
 import { Location } from '../app/components/location';
 import { FAQ } from '../app/components/faq';
 import { Footer } from '../app/components/footer';
-import RegistrationModal from '../app/components/RegistrationModal';
+
+const RegistrationModal = lazy(() => import('../app/components/RegistrationModal'));
 
 export function V2Page() {
   const [showRegistration, setShowRegistration] = useState(false);
@@ -37,7 +38,11 @@ export function V2Page() {
       <FAQ />
       <Footer />
 
-      <RegistrationModal isOpen={showRegistration} onClose={() => setShowRegistration(false)} />
+      {showRegistration && (
+        <Suspense fallback={null}>
+          <RegistrationModal isOpen={showRegistration} onClose={() => setShowRegistration(false)} />
+        </Suspense>
+      )}
     </>
   );
 }

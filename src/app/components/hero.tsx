@@ -69,6 +69,8 @@ export function Hero({ onRegister }: { onRegister?: () => void }) {
           src={heroBanner}
           alt="Exploria Hero Banner"
           className="w-full h-auto object-cover"
+          fetchPriority="high"
+          decoding="async"
         />
       </motion.div>
 

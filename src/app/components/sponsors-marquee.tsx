@@ -32,7 +32,7 @@ export function SponsorsMarquee() {
         {/* Double the logos for seamless loop */}
         {[...logos, ...logos].map((logo, i) => (
           <div key={i} className="flex-shrink-0 px-2 sm:px-4">
-            <ImageWithFallback src={logo.src} alt={logo.alt} className={logo.className} />
+            <ImageWithFallback src={logo.src} alt={logo.alt} className={logo.className} loading="lazy" decoding="async" />
           </div>
         ))}
       </div>

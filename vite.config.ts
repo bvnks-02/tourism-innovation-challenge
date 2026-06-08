@@ -33,4 +33,29 @@ export default defineConfig({
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
+
+  build: {
+    // Separate vendor libs into their own chunk for better caching
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router'],
+          'vendor-motion': ['motion', 'framer-motion'],
+          'vendor-ui': [
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-select',
+            '@radix-ui/react-tabs',
+            '@radix-ui/react-tooltip',
+          ],
+        },
+      },
+    },
+    // Inline small assets (< 8KB) as base64 to reduce HTTP requests
+    assetsInlineLimit: 8192,
+    // Target modern browsers for smaller output
+    target: 'es2020',
+    // Enable CSS code splitting so each route gets only the CSS it needs
+    cssCodeSplit: true,
+  },
 })
