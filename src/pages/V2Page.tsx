@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar } from '../app/components/navbar';
 import { Hero } from '../app/components/hero';
+import { Exploria } from '../app/components/exploria';
 import { SponsorsMarquee } from '../app/components/sponsors-marquee';
 import PhaseSteps from '../app/components/PhaseSteps';
 import Scoreboard from '../app/components/Scoreboard';
@@ -19,6 +20,8 @@ export function V2Page() {
 
       <main>
         <Hero onRegister={() => setShowRegistration(true)} />
+
+        <Exploria />
 
         <div className="space-y-16 pb-16">
           <SponsorsMarquee />

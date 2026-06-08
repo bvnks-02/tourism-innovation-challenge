@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar } from '../app/components/navbar';
 import { Hero } from '../app/components/hero';
+import { Exploria } from '../app/components/exploria';
 import { SponsorsMarquee } from '../app/components/sponsors-marquee';
 import { OnlinePhase } from '../app/components/online-phase';
 import { Agenda } from '../app/components/agenda';
@@ -15,6 +16,8 @@ export function Home() {
 
       <main>
         <Hero />
+
+        <Exploria />
 
         <div className="space-y-16 pb-16">
           <SponsorsMarquee />
