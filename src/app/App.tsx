@@ -6,6 +6,7 @@ import { OnlinePhase } from './components/online-phase';
 import { Agenda } from './components/agenda';
 import { Location } from './components/location';
 import { FAQ } from './components/faq';
+import { Registration } from './components/registration';
 import { Footer } from './components/footer';
 
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
       </main>
 
       <FAQ />
+      <Registration />
       <Footer />
     </div>
   );
