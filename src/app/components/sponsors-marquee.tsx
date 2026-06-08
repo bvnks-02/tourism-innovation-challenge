@@ -31,10 +31,10 @@ export function SponsorsMarquee() {
               <ImageWithFallback src={logoUrl} alt="Sponsor" className="h-14 object-contain opacity-80 grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="flex items-center gap-4">
-              <span className="font-['Space_Grotesk'] text-2xl font-bold text-gray-500 tracking-wider">DAR EL CHABAB</span>
+              <ImageWithFallback src={sponsor2} alt="Dar Chabab" className="h-14 object-contain opacity-80 hover:opacity-100 transition-all" />
             </div>
             <div className="flex items-center gap-4">
-              <span className="font-['Space_Grotesk'] text-2xl font-bold text-gray-500 tracking-wider">MAISON DE JEUNES</span>
+              <ImageWithFallback src={sponsor1} alt="Maison de Jeunes" className="h-14 object-contain opacity-80 hover:opacity-100 transition-all" />
             </div>
             <div className="flex items-center gap-4">
               <ImageWithFallback src={leagueLogo} alt="League" className="h-14 object-contain opacity-80 hover:opacity-100 transition-all" />

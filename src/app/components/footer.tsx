@@ -3,6 +3,8 @@ import { Facebook, Instagram, Youtube, Pin as Pinterest } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import logoUrl from 'figma:asset/a002ade102e5647cc4c4dd616ef16005db30d643.png';
 import leagueLogo from 'figma:asset/league.png';
+import sponsor2 from 'figma:asset/ccaef7492b4d1c76c1542c20896ad21866be7011.png';
+import algiersWilaya from 'figma:asset/algiers-wilaya.png';
 
 export function Footer() {
   return (
@@ -39,18 +41,12 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Organizer */}
+          {/* Column 3: Partners & Organizers */}
           <div>
-            <h3 className="font-['Inter'] font-bold text-[16px] text-[#111111] mb-4">Organizer</h3>
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-2">
-                <div className="flex flex-col gap-0.5">
-                  <div className="w-6 h-1 bg-[#4DB6AC]" />
-                  <div className="w-6 h-1 bg-[#F67861]" />
-                  <div className="w-6 h-1 bg-[#FCE58D]" />
-                </div>
-                <span className="text-[10px] font-bold text-gray-400 leading-tight">MAISON DE<br/>JEUNES</span>
-              </div>
+            <h3 className="font-['Inter'] font-bold text-[16px] text-[#111111] mb-4">Partners & Organizers</h3>
+            <div className="flex flex-col gap-4">
+              <ImageWithFallback src={sponsor2} alt="Dar Chabab" className="h-10 w-auto object-contain" />
+              <ImageWithFallback src={algiersWilaya} alt="Wilaya of Algiers" className="h-10 w-auto object-contain" />
               <ImageWithFallback src={leagueLogo} alt="League" className="h-10 w-auto object-contain" />
             </div>
           </div>
