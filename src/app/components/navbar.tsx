@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import logoUrl from 'figma:asset/a002ade102e5647cc4c4dd616ef16005db30d643.png';
 
-export function Navbar() {
+export function Navbar({ onRegister }: { onRegister?: () => void }) {
+  const location = useLocation();
+  const isV2 = location.pathname === '/v2';
   const [scrolled, setScrolled] = useState(false);
   
   useEffect(() => {
@@ -27,12 +29,15 @@ export function Navbar() {
           <Link to="/#contact" className="font-['Raleway'] font-semibold text-gray-700 hover:text-black transition">Contact us</Link>
         </nav>
         
-        <Link
-          to="/register"
-          className="bg-[#26A19E] hover:bg-[#1f8784] text-white font-['Raleway'] font-bold text-lg px-8 py-3 rounded-xl transition shadow-lg shadow-teal-500/20 cursor-pointer inline-block"
-        >
-          Register
-        </Link>
+        {isV2 ? (
+          <button onClick={onRegister} className="bg-[#26A19E] hover:bg-[#1f8784] text-white font-['Raleway'] font-bold text-lg px-8 py-3 rounded-xl transition shadow-lg shadow-teal-500/20 cursor-pointer">
+            Register
+          </button>
+        ) : (
+          <Link to="/register" className="bg-[#26A19E] hover:bg-[#1f8784] text-white font-['Raleway'] font-bold text-lg px-8 py-3 rounded-xl transition shadow-lg shadow-teal-500/20 cursor-pointer inline-block">
+            Register
+          </Link>
+        )}
       </div>
     </header>
   );

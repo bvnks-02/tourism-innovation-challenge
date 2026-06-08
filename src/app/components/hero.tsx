@@ -43,7 +43,7 @@ function computeTimeLeft(target: Date) {
   };
 }
 
-export function Hero() {
+export function Hero({ onRegister }: { onRegister?: () => void }) {
   // Registration deadline: June 14, 2026, 23:59:59
   const target = new Date(2026, 5, 14, 23, 59, 59);
   const timeLeft = useCountdown(target);
@@ -77,7 +77,7 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
-            <button className="bg-[#2B7C75] hover:bg-[#1E625B] text-white font-['Montserrat'] font-semibold text-lg md:text-xl px-10 py-4 rounded-[40px] transition-all hover:scale-105 shadow-xl cursor-pointer">
+            <button onClick={onRegister} className="bg-[#2B7C75] hover:bg-[#1E625B] text-white font-['Montserrat'] font-semibold text-lg md:text-xl px-10 py-4 rounded-[40px] transition-all hover:scale-105 shadow-xl cursor-pointer">
               Register now
             </button>
             <a

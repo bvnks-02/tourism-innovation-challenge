@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import { Home } from '../pages/Home';
 import { RegisterPage } from '../pages/Register';
+import { V2Page } from '../pages/V2Page';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/v2" element={<V2Page />} />
         </Routes>
       </div>
     </BrowserRouter>
