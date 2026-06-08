@@ -4,7 +4,7 @@ import { Lightbulb, Palette, Users, Target } from 'lucide-react';
 
 export function Exploria() {
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section id="about" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Text */}

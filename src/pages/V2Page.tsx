@@ -6,6 +6,7 @@ import { SponsorsMarquee } from '../app/components/sponsors-marquee';
 import PhaseSteps from '../app/components/PhaseSteps';
 import Scoreboard from '../app/components/Scoreboard';
 import { Agenda } from '../app/components/agenda';
+import { Prizes } from '../app/components/Prizes';
 import { Location } from '../app/components/location';
 import { FAQ } from '../app/components/faq';
 import { Footer } from '../app/components/footer';
@@ -28,6 +29,7 @@ export function V2Page() {
           <PhaseSteps />
           <Agenda />
           <Scoreboard />
+          <Prizes />
           <Location />
         </div>
       </main>

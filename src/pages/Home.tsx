@@ -5,6 +5,7 @@ import { Exploria } from '../app/components/exploria';
 import { SponsorsMarquee } from '../app/components/sponsors-marquee';
 import { OnlinePhase } from '../app/components/online-phase';
 import { Agenda } from '../app/components/agenda';
+import { Prizes } from '../app/components/Prizes';
 import { Location } from '../app/components/location';
 import { FAQ } from '../app/components/faq';
 import { Footer } from '../app/components/footer';
@@ -23,6 +24,7 @@ export function Home() {
           <SponsorsMarquee />
           <OnlinePhase />
           <Agenda />
+          <Prizes />
           <Location />
         </div>
       </main>

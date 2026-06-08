@@ -88,7 +88,7 @@ const steps: Step[] = [
 
 export default function PhaseSteps() {
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
+    <section id="online-phase" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16 relative z-10 flex flex-col items-center">
