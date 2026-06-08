@@ -4,6 +4,7 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import logoUrl from 'figma:asset/a002ade102e5647cc4c4dd616ef16005db30d643.png';
 import sponsor1 from 'figma:asset/2c32bd0d66e6e7b25974d1c324e66dad7c2f9744.png';
 import sponsor2 from 'figma:asset/ccaef7492b4d1c76c1542c20896ad21866be7011.png';
+import leagueLogo from 'figma:asset/league.png';
 
 export function SponsorsMarquee() {
   return (
@@ -34,6 +35,9 @@ export function SponsorsMarquee() {
             </div>
             <div className="flex items-center gap-4">
               <span className="font-['Space_Grotesk'] text-2xl font-bold text-gray-500 tracking-wider">MAISON DE JEUNES</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <ImageWithFallback src={leagueLogo} alt="League" className="h-14 object-contain opacity-80 hover:opacity-100 transition-all" />
             </div>
           </React.Fragment>
         ))}

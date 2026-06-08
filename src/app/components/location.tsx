@@ -1,5 +1,7 @@
 import React from 'react';
 import { MapPin, Clock, CalendarDays, Navigation } from 'lucide-react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+import algiersWilaya from 'figma:asset/algiers-wilaya.png';
 
 export function Location() {
   return (
@@ -32,9 +34,12 @@ export function Location() {
 
             {/* Floating Overlay Card */}
             <div className="absolute top-[16px] left-[16px] bg-white rounded-[8px] p-[16px] shadow-[0px_4px_12px_rgba(0,0,0,0.1)] flex items-center justify-between gap-6 z-10 min-w-[220px]">
-              <div>
-                <h4 className="font-sans font-bold text-gray-900 text-sm">Maqam Echahid,</h4>
-                <p className="font-sans text-xs text-gray-500 mt-0.5">Algiers, Algeria</p>
+              <div className="flex items-center gap-3">
+                <ImageWithFallback src={algiersWilaya} alt="Algiers Wilaya" className="w-10 h-10 object-contain" />
+                <div>
+                  <h4 className="font-sans font-bold text-gray-900 text-sm">Maqam Echahid,</h4>
+                  <p className="font-sans text-xs text-gray-500 mt-0.5">Algiers, Algeria</p>
+                </div>
               </div>
               <div className="bg-blue-50 p-2 rounded-full cursor-pointer hover:bg-blue-100 transition-colors">
                 <Navigation className="w-5 h-5 text-[#007BFF]" />

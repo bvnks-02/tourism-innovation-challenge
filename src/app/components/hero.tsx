@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Plane } from 'lucide-react';
 
@@ -13,7 +13,41 @@ function TimeUnit({ value, label }: { value: string, label: string }) {
   );
 }
 
+function useCountdown(target: Date) {
+  const [timeLeft, setTimeLeft] = useState(() => computeTimeLeft(target));
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(computeTimeLeft(target));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [target]);
+
+  return timeLeft;
+}
+
+function computeTimeLeft(target: Date) {
+  const diff = target.getTime() - Date.now();
+  if (diff <= 0) return { days: '00', hours: '00', minutes: '00', seconds: '00' };
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  return {
+    days: String(days).padStart(2, '0'),
+    hours: String(hours).padStart(2, '0'),
+    minutes: String(minutes).padStart(2, '0'),
+    seconds: String(seconds).padStart(2, '0'),
+  };
+}
+
 export function Hero() {
+  // Registration deadline: June 14, 2026, 23:59:59
+  const target = new Date(2026, 5, 14, 23, 59, 59);
+  const timeLeft = useCountdown(target);
+
   return (
     <section className="relative pt-40 pb-16 min-h-screen flex flex-col justify-center overflow-hidden">
       {/* Decorative Path */}
@@ -62,13 +96,13 @@ export function Hero() {
         >
           <h3 className="font-['Montserrat'] font-semibold text-2xl md:text-3xl mb-10 text-gray-800">Registration ends in</h3>
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-14">
-            <TimeUnit value="05" label="Days" />
+            <TimeUnit value={timeLeft.days} label="Days" />
             <div className="w-2 h-2 rounded-full bg-[#F67861] hidden md:block ring-4 ring-[#F67861]/20 -mt-8" />
-            <TimeUnit value="18" label="Hours" />
+            <TimeUnit value={timeLeft.hours} label="Hours" />
             <div className="w-2 h-2 rounded-full bg-[#F67861] hidden md:block ring-4 ring-[#F67861]/20 -mt-8" />
-            <TimeUnit value="24" label="Minutes" />
+            <TimeUnit value={timeLeft.minutes} label="Minutes" />
             <div className="w-2 h-2 rounded-full bg-[#F67861] hidden md:block ring-4 ring-[#F67861]/20 -mt-8" />
-            <TimeUnit value="02" label="Seconds" />
+            <TimeUnit value={timeLeft.seconds} label="Seconds" />
           </div>
         </motion.div>
       </div>
