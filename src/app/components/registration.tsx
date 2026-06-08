@@ -24,6 +24,10 @@ const wilayas = [
   'Ghardaïa', 'Relizane', 'Timimoun', 'Bordj Badji Mokhtar', 'Ouled Djellal',
   'Béni Abbès', 'In Salah', 'In Guezzam', 'Touggourt', 'Djanet',
   'El M\'Ghair', 'El Meniaa',
+  // 11 new wilayas — Law n°26-06, April 2026
+  'Aflou', 'El Abiodh Sidi Cheikh', 'El Aricha', 'El Kantara',
+  'Barika', 'Bou Saâda', 'Bir El Ater', 'Ksar El Boukhari',
+  'Ksar Chellala', 'Aïn Oussara', 'Messaâd',
 ];
 
 const tshirtSizes = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL'];
