@@ -81,8 +81,9 @@ export function Hero() {
               Register now
             </button>
             <a
-              href="/files/competition-guide.pdf"
-              download
+              href="https://drive.google.com/file/d/1r-1ppzAilOFRcHQyhK8qaJ1J06_aK30-/view"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-transparent border-2 border-[#2B7C75] text-gray-900 font-['Montserrat'] font-semibold text-lg md:text-xl px-10 py-4 rounded-[40px] transition-colors hover:bg-[#2B7C75]/5 cursor-pointer inline-block"
             >
               Download Competition Guide
