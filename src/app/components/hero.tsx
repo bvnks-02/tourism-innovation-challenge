@@ -50,7 +50,7 @@ export function Hero({ onRegister }: { onRegister?: () => void }) {
   const timeLeft = useCountdown(target);
 
   return (
-    <section className="relative pt-40 pb-16 min-h-screen flex flex-col justify-center overflow-hidden">
+    <section className="relative pb-16 flex flex-col overflow-hidden">
       {/* Decorative Path */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
         <svg className="absolute top-[15%] right-[10%] w-64 h-32 opacity-30 text-gray-800" viewBox="0 0 200 100" fill="none">
@@ -58,22 +58,21 @@ export function Hero({ onRegister }: { onRegister?: () => void }) {
         </svg>
       </div>
 
-      <div className="container mx-auto px-6 max-w-6xl text-center relative z-10">
-        {/* Hero Banner Image */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mb-8"
-        >
-          <img
-            src={heroBanner}
-            alt="Exploria Hero Banner"
-            className="w-full max-w-4xl mx-auto h-auto object-contain"
-          />
-        </motion.div>
+      {/* Hero Banner Image - directly under navbar, full width */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="w-full pt-16 sm:pt-18 md:pt-20"
+      >
+        <img
+          src={heroBanner}
+          alt="Exploria Hero Banner"
+          className="w-full h-auto object-cover"
+        />
+      </motion.div>
 
+      <div className="container mx-auto px-6 max-w-6xl text-center relative z-10 mt-8 md:mt-12">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
